@@ -15,8 +15,8 @@ export const Board: React.FC<BoardProps> = ({ board, validMoves, currentPlayer, 
   };
 
   const handleCellClick = (row: number, col: number) => {
-    // 白の手番の場合はクリックを無視
-    if (currentPlayer === 'white') return;
+    // コンピュータの手番の場合はクリックを無視
+    if (currentPlayer === 'blue') return;
     onCellClick(row, col);
   };
 
@@ -31,7 +31,7 @@ export const Board: React.FC<BoardProps> = ({ board, validMoves, currentPlayer, 
                 value={cell}
                 isValidMove={isValidMove(rowIndex, colIndex)}
                 onClick={() => handleCellClick(rowIndex, colIndex)}
-                disabled={currentPlayer === 'white'}
+                disabled={currentPlayer === 'blue'}
               />
             ))}
           </React.Fragment>

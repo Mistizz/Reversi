@@ -138,12 +138,6 @@ export const useOthello = () => {
     return { position: bestMoves[0].position, moveType: 'Best Move (No other choice)' };
   }, [getBestMoves]);
 
-  const getNextPlayer = (currentPlayer: Player): Player => {
-    if (currentPlayer === 'red') return 'blue';
-    if (currentPlayer === 'blue') return 'red';
-    return 'red';
-  };
-
   const [gameState, setGameState] = useState<GameState>(() => {
     const initialBoard = createInitialBoard();
     const initialValidMoves = findValidMoves(initialBoard, 'red');
