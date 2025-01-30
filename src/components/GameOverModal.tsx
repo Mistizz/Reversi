@@ -1,5 +1,7 @@
 import React from 'react';
 import { Player } from '../types/game';
+import Bitcoin from '../assets/Bitcoin.png';
+import Ethereum from '../assets/Ethereum.png';
 
 interface GameOverModalProps {
   isOpen: boolean;
@@ -19,8 +21,8 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({
   if (!isOpen) return null;
 
   const getMessage = () => {
-    if (winner === 'red') return 'Red Wins!';
-    if (winner === 'blue') return 'Blue Wins!';
+    if (winner === 'red') return 'ETH Wins!';
+    if (winner === 'blue') return 'BTC Wins!';
     if (winner === 'draw') return 'Draw!';
     return 'Game Over';
   };
@@ -32,12 +34,12 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({
         <div className="space-y-4 mb-6">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-red-600 rounded-full"></div>
-              <span className="text-lg">Red: {redCount} pieces</span>
+              <img src={Ethereum} alt="ETH" className="w-6 h-6" />
+              <span className="text-lg">ETH: {redCount} pieces</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
-              <span className="text-lg">Blue: {blueCount} pieces</span>
+              <img src={Bitcoin} alt="BTC" className="w-6 h-6" />
+              <span className="text-lg">BTC: {blueCount} pieces</span>
             </div>
           </div>
         </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { CellValue } from '../types/game';
+import Bitcoin from '../assets/Bitcoin.png';
+import Ethereum from '../assets/Ethereum.png';
 
 interface CellProps {
   value: CellValue;
@@ -22,12 +24,13 @@ export const Cell: React.FC<CellProps> = ({ value, isValidMove, disabled, onClic
       `}
     >
       {value && (
-        <div
+        <img
+          src={value === 'red' ? Ethereum : Bitcoin}
+          alt={`${value} piece`}
           className={`
             absolute
-            w-10 h-10 rounded-full
+            w-10 h-10
             transform transition-all duration-300 ease-in-out
-            ${value === 'red' ? 'bg-red-600' : 'bg-blue-600'}
             ${isValidMove ? 'scale-0' : 'scale-100'}
           `}
         />
