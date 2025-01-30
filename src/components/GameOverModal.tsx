@@ -21,7 +21,7 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({
   if (!isOpen) return null;
 
   const getMessage = () => {
-    if (winner === 'red') return 'BASE Wins!';
+    if (winner === 'red') return 'Base Wins!';
     if (winner === 'blue') return 'BTC Wins!';
     if (winner === 'draw') return 'Draw!';
     return 'Game Over';
@@ -34,8 +34,8 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({
         <div className="space-y-4 mb-6">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <img src={BaseNetwork} alt="BASE" className="w-6 h-6" />
-              <span className="text-lg">BASE: {redCount} pieces</span>
+              <img src={BaseNetwork} alt="Base" className="w-6 h-6" />
+              <span className="text-lg">Base: {redCount} pieces</span>
             </div>
             <div className="flex items-center gap-3">
               <img src={Bitcoin} alt="BTC" className="w-6 h-6" />

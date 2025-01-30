@@ -24,12 +24,12 @@ export const GameInfo: React.FC<GameInfoProps> = ({
 }) => {
   const getGameStatus = () => {
     if (isGameOver) {
-      if (winner === 'red') return 'BASE Wins!';
+      if (winner === 'red') return 'Base Wins!';
       if (winner === 'blue') return 'BTC Wins!';
       if (winner === 'draw') return 'Draw!';
       return 'Game Over';
     }
-    return `${currentPlayer === 'red' ? 'BASE' : 'BTC'}'s Turn`;
+    return `${currentPlayer === 'red' ? 'Base' : 'BTC'}'s Turn`;
   };
 
   return (
@@ -43,7 +43,7 @@ export const GameInfo: React.FC<GameInfoProps> = ({
         )}
         <div className="flex justify-center gap-8">
           <div className="flex items-center gap-3">
-            <img src={BaseNetwork} alt="BASE" className="w-6 h-6" />
+            <img src={BaseNetwork} alt="Base" className="w-6 h-6" />
             <span className="text-lg font-medium text-gray-700">{redCount} pieces</span>
           </div>
           <div className="flex items-center gap-3">
