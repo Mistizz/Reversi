@@ -1,7 +1,7 @@
 import React from 'react';
 import { CellValue } from '../types/game';
 import Bitcoin from '../assets/Bitcoin.png';
-import Ethereum from '../assets/Ethereum.png';
+import BaseNetwork from '../assets/Base_Network.png';
 
 interface CellProps {
   value: CellValue;
@@ -25,7 +25,7 @@ export const Cell: React.FC<CellProps> = ({ value, isValidMove, disabled, onClic
     >
       {value && (
         <img
-          src={value === 'red' ? Ethereum : Bitcoin}
+          src={value === 'red' ? BaseNetwork : Bitcoin}
           alt={`${value} piece`}
           className={`
             absolute

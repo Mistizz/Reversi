@@ -1,5 +1,7 @@
 import React from 'react';
 import { Player } from '../types/game';
+import Bitcoin from '../assets/Bitcoin.png';
+import BaseNetwork from '../assets/Base_Network.png';
 
 interface GameInfoProps {
   currentPlayer: Player;
@@ -22,13 +24,12 @@ export const GameInfo: React.FC<GameInfoProps> = ({
 }) => {
   const getGameStatus = () => {
     if (isGameOver) {
-      if (winner === 'red') return 'Red Wins!';
-      if (winner === 'blue') return 'Blue Wins!';
+      if (winner === 'red') return 'BASE Wins!';
+      if (winner === 'blue') return 'BTC Wins!';
       if (winner === 'draw') return 'Draw!';
       return 'Game Over';
     }
-    const playerColor = currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1);
-    return `${playerColor}'s Turn`;
+    return `${currentPlayer === 'red' ? 'BASE' : 'BTC'}'s Turn`;
   };
 
   return (
@@ -42,11 +43,11 @@ export const GameInfo: React.FC<GameInfoProps> = ({
         )}
         <div className="flex justify-center gap-8">
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-red-600 rounded-full shadow-md"></div>
+            <img src={BaseNetwork} alt="BASE" className="w-6 h-6" />
             <span className="text-lg font-medium text-gray-700">{redCount} pieces</span>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-blue-600 rounded-full shadow-md"></div>
+            <img src={Bitcoin} alt="BTC" className="w-6 h-6" />
             <span className="text-lg font-medium text-gray-700">{blueCount} pieces</span>
           </div>
         </div>
